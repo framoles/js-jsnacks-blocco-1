@@ -8,7 +8,8 @@ btn = document.getElementById("verify");
 btn.addEventListener("click", function () {
     const dbInvited = ["Mario", "Giovanni", "Luca", "Andrea", "Dino"];
     userName = document.getElementById("name");
-    if (isNaN(userName.value)) {
+    let regex = /^[a-z]+$/i;
+    if (regex.test(userName.value)) {
         let invite = false;
 
         for (let i = 0; i < dbInvited.length; i++) {
@@ -25,7 +26,7 @@ btn.addEventListener("click", function () {
         }
     }
     else {
-        alert("Devi inserire un nome")
+        alert("Caratteri non validi")
 
     }
     userName.value = "";
