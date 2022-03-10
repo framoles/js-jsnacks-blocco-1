@@ -7,14 +7,14 @@ let valid = false;
 do {
     let number = prompt("Inserisci numero di 4 cifre");
     const array = number.split("");
-    if (array.length == 4) {
+    if (array.length == 4 && !isNaN(parseInt(number))) {
         valid = true;
 
         for (let i = 0; i < array.length; i++) {
             sum += parseInt(array[i]);
         }
     }
-    else { alert("Il numero inserito non è di 4 cifre") }
+    else { alert("Il numero inserito non è di 4 cifre oppure non hai inserito un numero") }
 
 
 } while (!valid);
