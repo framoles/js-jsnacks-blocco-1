@@ -1,14 +1,21 @@
 // Chiedi un numero di 4 cifre all’utente e calcola la somma di tutte le cifre che compongono il numero.
 
-var a = parseInt(prompt("Inserisci numero di 4 cifre"));
-var sum = 0;
-if (!isNaN(a)) {
-    while (a > 0) {
-        sum += a % 10;
-        a = Math.floor(a / 10);
+let sum = 0;
+let valid = false;
+
+
+do {
+    let number = prompt("Inserisci numero di 4 cifre");
+    const array = number.split("");
+    if (array.length == 4) {
+        valid = true;
+
+        for (let i = 0; i < array.length; i++) {
+            sum += parseInt(array[i]);
+        }
     }
-    alert("La somma delle cifre è: " + sum);
-}
-else {
-    alert("Non hai inserito un numero!");
-}
+    else { alert("Il numero inserito non è di 4 cifre") }
+
+
+} while (!valid);
+alert(sum);
