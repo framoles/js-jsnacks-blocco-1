@@ -12,23 +12,21 @@ btn.addEventListener("click", function () {
         let invite = false;
 
         for (let i = 0; i < dbInvited.length; i++) {
-            if (userName.value === dbInvited[i]) {
+            if ((userName.value).toLowerCase() === dbInvited[i].toLowerCase()) {
                 invite = true;
                 break;
             }
         }
         if (invite) {
             alert("Puoi partecipare alla festa");
-            userName.value = "";
         }
         else {
             alert("Non puoi partecipare alla festa")
-            userName.value = "";
         }
     }
     else {
         alert("Devi inserire un nome")
-        userName.value = "";
-    }
 
+    }
+    userName.value = "";
 })
